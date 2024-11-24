@@ -1,10 +1,10 @@
-# COLOR_CONVERSIONS_OF-IMAGE
+# COLOR_CONVERSIONS_OF-IMAGE->
 ## AIM
 Write a Python program using OpenCV that performs the following tasks:
 
 i) Read and Display an Image.
 
-ii) Draw Shapes and Add Text.
+ii) 	Draw Shapes and Add Text.
 
 iii) Image Color Conversion.
 
@@ -23,250 +23,275 @@ viii)	Write and Save the Modified Image
 Anaconda - Python 3.7
 ## Algorithm:
 ### Step1:
-Load an image from your local directory and display it.
+1.Load an image from your local directory and display it.
 ### Step2:
-1.  Draw a line from the top-left to the bottom-right of the image.
+1.Draw a line from the top-left to the bottom-right of the image.
 
-2.	Draw a circle at the center of the image.
+2.Draw a circle at the center of the image.
 
-3.	Draw a rectangle around a specific region of interest in the image.
+3.Draw a rectangle around a specific region of interest in the image.
 
-4.	Add the text "OpenCV Drawing" at the top-left corner of the image.
+4.Add the text "OpenCV Drawing" at the top-left corner of the image.
 
 ### Step3:
-1.	Convert the image from RGB to HSV and display it.
-2.	Convert the image from RGB to GRAY and display it.
-3.	Convert the image from RGB to YCrCb and display it.
-4.	Convert the HSV image back to RGB and display it.
+1.Convert the image from RGB to HSV and display it.
+
+2.Convert the image from RGB to GRAY and display it.
+
+3.Convert the image from RGB to YCrCb and display it.
+
+4.Convert the HSV image back to RGB and display it.
 
 ### Step4:
-1.	Access and print the value of the pixel at coordinates (100, 100).
-2.	Modify the color of the pixel at (200, 200) to white.
+1.Access and print the value of the pixel at coordinates (100, 100).
+
+2.Modify the color of the pixel at (200, 200) to white.
 
 ### Step5:
-Resize the original image to half its size and display it.
+1.Resize the original image to half its size and display it.
 ### Step6:
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+1.Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ### Step7:
-1.	Flip the original image horizontally and display it.
-2.	Flip the original image vertically and display it.
+1.Flip the original image horizontally and display it.
+
+2.Flip the original image vertically and display it.
 
 ### Step8:
-Save the final modified image to your local directory.
+1.Save the final modified image to your local directory.
 
 
 ## Program:
-### Developed By: MITHUN M S
-### Register Number: 212222240067
+### Developed By: AJAY ASWIN M
+### Register Number: 212222240005
 
-
-## Output:
-
-### 1. Read and display the image
-i.Load an image from your local directory and display it.
+### i)Read and Display an Image
 ```
 import cv2
-image=cv2.imread('naturek.jpg',1)
-image = cv2.resize(image, (400, 300))
-cv2.imshow('NATUREK',image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image=cv2.imread('kolhi.jpg')
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+plt.imshow(image)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-02 091158](https://github.com/user-attachments/assets/520ea58c-0186-456d-9b9e-9e23c56bfb46)
+### Output
+![{A3052B53-90D6-41A3-9C70-BB5EB98B1526}](https://github.com/user-attachments/assets/afd7f227-8afc-42e0-825b-c00325a5a69f)
 
-### Draw Shapes and Add Text
-(1) Draw a line from the top-left to the bottom-right of the image.
+
+### ii)Draw Shapes and Add Text
+1) Draw a line from the top-left to the bottom-right of the image.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-res = cv2.line(image, (0, 0), (300,400), (255,0,0), 10)
-cv2.imshow('WINDOW', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+res = cv2.line(image, (0, 0), (440,591), (200, 100, 205), 10)
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-08 120658](https://github.com/user-attachments/assets/3f281a31-8d3f-4e96-959b-b373d9001383)
+### Output
+![{18C2D785-C65E-4378-90A5-BA8DA3C4E297}](https://github.com/user-attachments/assets/06a8a81a-e9fa-4f3d-b4e8-05bbed6287aa)
 
-2. Draw a circle at the center of the image.
+
+(2) Draw a circle at the center of the image.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-height, width, _ = image.shape
-center_coordinates = (width // 2, height // 2)
-res = cv2.circle(image, center_coordinates, 120, (0, 255, 0), 10)
-cv2.imshow('WINDOW', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+image = cv2.resize(image,(500,500))
+res = cv2.circle(image,(250,250), 150, (255, 0, 0), 10)
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-08 120744](https://github.com/user-attachments/assets/bcbd9b85-cf3f-4feb-9cfa-24790dd1814c)
+### Output
+![{A78A5DA2-EF90-434C-A3E6-4AEA0E4C7A78}](https://github.com/user-attachments/assets/44205b68-7045-43cf-8190-40cf588679cf)
 
-3.Draw a rectangle around a specific region of interest in the image.
+
+(3) Draw a rectangle around a specific region of interest in the image.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")          
-res_img = cv2.rectangle(cv2.resize(image, (400, 300)), (150, 100), (300, 200), (255, 255, 100), 10)
-cv2.imshow('WINDOW', res_img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+res = cv2.rectangle(image, (440-20,591-20), (0+10,0+10),(200,0, 0), 10)
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 085805](https://github.com/user-attachments/assets/add75b55-2ff3-446f-b7f0-f700b0ebb734)
+### Output
+![{D22F27A5-EF1B-463D-887E-529586CAC280}](https://github.com/user-attachments/assets/19780a37-c4cb-4396-b3ae-1660f34f298b)
 
 
-4.Add the text "OpenCV Drawing" at the top-left corner of the image.
+(4) Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-res = cv2.putText(cv2.resize(image, (400, 300)), "OpenCV Drawing", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255) , 2, cv2.LINE_AA)
-cv2.imshow('WINDOW', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+font = cv2.FONT_HERSHEY_SIMPLEX
+res = cv2.putText(image,"VIRAT", (5,150), font,1.5, (0, 0, 0),5)
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 085842](https://github.com/user-attachments/assets/95c05efb-5590-4d91-9462-8c1c44689927)
+### Output
+![{FCB555D5-686D-49BA-8876-2480CFED752D}](https://github.com/user-attachments/assets/54b2915e-5aed-4600-9e14-55c6cf999a4d)
+
 
 ### iii)Image Color Conversion
-(i)Convert the image from RGB to HSV and display it
+1) Convert the image from RGB to HSV and display it
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-hsv = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
-cv2.imshow('RGB2HSV',hsv)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+hsv2 = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
+plt.imshow(hsv2)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 085922](https://github.com/user-attachments/assets/1cf5b4fa-78bf-4f94-941d-5b2fb7748dd4)
+### Output
+![{D89B1E41-CC5D-499B-B3C6-B56A8847B8C4}](https://github.com/user-attachments/assets/dd1a0063-28c1-45c6-85ac-db69eed98010)
+
 
 (2) Convert the image from RGB to GRAY and display it.
-
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
-cv2.imshow('RGB2GRAY',gray)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+gray2 = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
+plt.imshow(gray2)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090013](https://github.com/user-attachments/assets/c2360004-6330-4114-bba8-fd8c4aac14fc)
+### Output
+![{0260EFCD-0D3C-4F8E-BA80-6B82DB93FA11}](https://github.com/user-attachments/assets/49df5e27-2d78-4403-96c0-9f73cc87f087)
 
 
-(3) Convert the image from RGB to YCrCb and display it.
+3) Convert the image from RGB to YCrCb and display it.
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-YCrCb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
-cv2.imshow('RGB-2-YCrCb',YCrCb)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+YCrCb1 = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
+plt.imshow(YCrCb1)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090053](https://github.com/user-attachments/assets/f519b75b-8777-4709-aef0-237cf690b5e6)
+### Output
+![{BC9D5546-7C5A-4301-BA21-E14D0E72760C}](https://github.com/user-attachments/assets/8262a58a-2b01-4bb4-be79-1daa7abe876f)
+
 
 (4) Convert the HSV image back to RGB and display it.
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-RGB = cv2.cvtColor(image,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',RGB)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+BGR = cv2.cvtColor(image,cv2.COLOR_HSV2BGR)
+plt.imshow(BGR)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090132](https://github.com/user-attachments/assets/6e818c27-966e-46e0-a1b3-52887d8010ef)
+### Output
+![{F03536E2-7E38-4CA3-8751-E3306EDD584A}](https://github.com/user-attachments/assets/86859770-d6dc-4a00-9d63-9d06e847824a)
+
 
 ### iv)Access and Manipulate Image Pixels
-(1) Access and print the value of the pixel at coordinates (100, 100)
 ```
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 pixel_value = image[100, 100]
 print(f"Pixel value at (100, 100): {pixel_value}")
+image[199, 199] = [255, 255, 255]
+plt.imshow(image)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090158](https://github.com/user-attachments/assets/53fb2f1a-8e20-4b3b-bdeb-cf314f0326fd)
+### Output
+![{704F2D4F-1C0D-47D7-9833-F154A47B6747}](https://github.com/user-attachments/assets/df789033-02cb-4ea9-bf94-7bd7633dbca2)
 
-(2) Modify the color of the pixel at (200, 200) to white
+### v)Image Resizing
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(400,300))
-cv2.imshow('ORIGINAL IMAGE',image)
-image[200, 200] = [255, 255, 255] 
-cv2.imshow('MODIFIED IMAGE', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+resized_img = cv2.resize(image, (900, 1000))
+plt.imshow(resized_img)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090237](https://github.com/user-attachments/assets/da0721e2-3301-43c2-9f66-e6974f3a4698)
+### Output
+![{2B889DCA-C081-4644-B9E2-7C93267EA788}](https://github.com/user-attachments/assets/3e85bcc6-a56c-4ee8-8287-ccd3d02c8675)
 
-### v)Image Resizing:
-Resize the original image to half its size and display it.
-```
-cv2.imshow('ORIGINAL IMAGE',image)
-resized_image = cv2.resize(image, (image.shape[1] // 2, image.shape[0] // 2))
-cv2.imshow('RESIZED IMAGE', resized_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-![Screenshot 2024-09-09 090318](https://github.com/user-attachments/assets/60fbc978-3772-4249-9148-9c5486c4599e)
-![Screenshot 2024-09-09 090331](https://github.com/user-attachments/assets/3ed7632c-9359-45e6-9aef-3fce7858cc4e)
 
 ### vi)Image Cropping
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ```
 import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(400,300))
-x, y = 50, 50
-width, height = 100, 100
-roi = image[y:y + height, x:x + width]
-cv2.imshow('CROPPED IMAGE', roi)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+roi = image[50:50 + 425, 50:50 + 425]
+plt.imshow(roi)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090407](https://github.com/user-attachments/assets/6a1d03bb-0c93-4207-941b-96ea80360a07)
-### vii)Image Flipping:
+### Output
+![{6F77A881-46DB-46EE-9CFE-3616E06CFE31}](https://github.com/user-attachments/assets/3562010e-a470-4ffa-9ab4-256784f7e32f)
+
+
+### vii)Image Flipping
 (1) Flip the original image horizontally and display it.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image,(300,200))
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 res=cv2.rotate(image,cv2.ROTATE_180)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+plt.imshow(res)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090449](https://github.com/user-attachments/assets/747a0eff-266f-494d-862c-be8548fd88d8)
+### Output
+![{089DDA9E-C5C0-4F4F-836F-9065B5AF0184}](https://github.com/user-attachments/assets/8aa5b934-a820-4217-9f0b-043967b2624f)
+
 
 (2) Flip the original image vertically and display it.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image,(300,200))
-res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+import matplotlib.pyplot as plt
+image = cv2.imread("kolhi.jpg")
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+image=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
+plt.imshow(image)
+plt.axis('off')
+plt.show()
 ```
-![Screenshot 2024-09-09 090532](https://github.com/user-attachments/assets/f4d998f1-00a1-4fc5-90e1-918d8c793018)
-![Screenshot 2024-09-09 090552](https://github.com/user-attachments/assets/fa353d26-4e1d-4117-8fa6-045c6cd24447)
+### Output
+![{F9076D27-CEFF-4107-A55D-F995B9573222}](https://github.com/user-attachments/assets/bdbfca83-3cd1-4f3f-afdc-d3fa26ef1e64)
+
 
 ### viii)Write and Save the Modified Image
-Save the final modified image to your local directory.
 ```
 import cv2
-img = cv2.imread("naturek.jpg")
-img = cv2.resize(img,(300,200))
-cv2.imwrite('nature_pic.jpg',img)
+img = cv2.imread("kolhi.jpg")
+cv2.imwrite('virat_kolhi.jpg',img)
 ```
-![Screenshot 2024-09-09 090632](https://github.com/user-attachments/assets/874121bf-a1c9-4fb9-be27-e4613309ad2d)
+### Output
+![{C7FAEF53-9F07-4737-9AC4-C8494EAA79B5}](https://github.com/user-attachments/assets/5762e5b0-1163-40ad-8ff3-1b17a9297ee8)
+
 
 ## Result:
+Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
 
-Thus the images are read, displayed, and written ,and color conversion was performed successfully using the python program.
 
 
 
